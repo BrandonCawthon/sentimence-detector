@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimence Detector</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js').then((registration) => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }).catch((error) => {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
+    <link rel="manifest" href="manifest.json">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <center>
+        <h1>Sentimence Detector</h1>
+        <h3>Returns sentimence score and overall mood for the given text!</h3>
+        <br>
+        <div role="textbox" contenteditable="true" id="text" maxlength="2000"
+            placeholder="Type text here... Max 2000 Characters"></div>
+        <br><br>
+        <button id="submit">Analyze Text</button><br><br>
+        <div id="result">
+
+        </div>
+    </center>
+</body>
+
+</html>
